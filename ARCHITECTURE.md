@@ -744,7 +744,7 @@ TreeSHAP provides exact Shapley values for LightGBM models in polynomial time. P
 
 ### Constraint-Aware Modeling
 
-Physical constraints — composition simplex, non-negativity of certain properties, known monotonic relationships — can be incorporated via:
+Physical constraints can be incorporated via:
 - Constrained loss functions
 - Post-hoc projection onto the feasible set
 - Monotone-constrained gradient boosting (supported natively by LightGBM `monotone_constraints` parameter)
