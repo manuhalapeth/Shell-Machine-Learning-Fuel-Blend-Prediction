@@ -1,0 +1,51 @@
+# OS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.env
+
+# Raw data (DO NOT PUSH COMPETITION DATA)
+data/raw/
+data/processed/
+
+# Models
+models/
+*.pkl
+
+# Experiments
+experiments/
+logs/
+
+# Submissions
+submissions/
+
+# Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Large files
+*.csv
+*.gz
+*.zip
+
+# Notebook training artifacts
+notebooks/catboost_info/
+notebooks/data/
+
+# Local environments
+.venv*/
+.venv/
+.venv_shell_ai/
+.venv310/
+
+# Python version
+.python-version
+
+# Local research folders
+Deep-Forest/
+

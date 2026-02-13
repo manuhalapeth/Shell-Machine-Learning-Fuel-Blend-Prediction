@@ -1,0 +1,30 @@
+# Core packages
+numpy>=1.26.0
+pandas==2.2.2
+scikit-learn==1.4.2
+
+# Visualization
+matplotlib==3.8.4
+seaborn==0.13.2
+plotly==6.2.0
+
+# Gradient boosting models
+xgboost==2.0.3
+lightgbm==4.3.0
+catboost==1.2.5
+
+# Hyperparameter tuning
+optuna==3.6.1
+
+# Jupyter for notebooks
+notebook
+
+# Utilities
+tqdm==4.66.2
+joblib==1.4.2
+
+# Logging, configs, reproducibility
+pyyaml==6.0.1
+loguru==0.7.2
+
+
