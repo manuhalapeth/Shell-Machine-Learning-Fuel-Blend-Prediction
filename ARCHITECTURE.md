@@ -15,7 +15,7 @@ The input feature space decomposes into two semantic groups:
 - **Composition vector** (5 features): volume fractions on a simplex (sum to 1.0)
 - **Component COA matrix** (50 features): 10 laboratory-measured properties for each of 5 components
 
-The output space consists of 10 independently scaled, continuous blend properties (`BlendProperty1` through `BlendProperty10`). The targets exhibit heterogeneous distributions — some are near-Gaussian, others are heavy-tailed or contain near-zero regions — requiring per-target distributional treatment.
+The output space consists of 10 independently scaled, continuous blend properties (`BlendProperty1` through `BlendProperty10`). The targets exhibit heterogeneous distributions, some are near-Gaussian, others are heavy-tailed or contain near-zero regions, requiring per-target distributional treatment.
 
 ### Architectural Goals
 
