@@ -8,9 +8,9 @@ Multi-target regression system for predicting 10 physicochemical properties of f
 
 ## Executive Summary
 
-Fuel blending is a constrained optimization problem central to refinery operations. Given a set of base components mixed at known volume fractions, the task is to predict the resulting blend's physicochemical properties — viscosity, octane rating, vapor pressure, and related quality metrics — without performing costly laboratory assays.
+Fuel blending is a constrained optimization problem central to refinery operations. Given a set of base components mixed at known volume fractions, the task is to predict the resulting blend's physicochemical properties without performing costly laboratory assays.
 
-This problem is nontrivial for several reasons. Blend properties do not combine linearly with volume fraction; interaction effects between components produce nonlinear, synergistic, and antagonistic behaviors that violate simple mixing rules. The input space is high-dimensional (55 features) relative to the sample size (2,000 observations), and the 10 target properties exhibit heterogeneous scales and distributions, making uniform error minimization across all outputs difficult.
+This problem is nontrivial for several reasons. Blend properties do not combine linearly with volume fraction. Interaction effects between components produce nonlinear, synergistic, and antagonistic behaviors that violate simple mixing rules. The input space is high-dimensional (55 features) relative to the sample size (2,000 observations), and the 10 target properties exhibit heterogeneous scales and distributions, making uniform error minimization across all outputs difficult.
 
 Accurate blend property prediction has direct implications for sustainable fuel engineering: it reduces the number of physical trials required during blend formulation, accelerates the development of low-emission fuel variants, and enables real-time quality control in blending operations.
 
@@ -39,7 +39,7 @@ The 5 composition fractions are constrained to sum to 1.0 (simplex constraint). 
 
 ### Why This Problem Is Hard
 
-The relationship between inputs and targets is governed by conditional interactions: the effect of a component's COA property on a blend property depends on that component's volume fraction. A high-octane component at 2% volume has negligible impact; at 40%, it dominates. These fraction-weighted interactions create a multiplicative feature space that linear models cannot capture without explicit feature engineering. Additionally, certain property pairs exhibit synergistic effects — the combined impact of two components exceeds the sum of their individual contributions — which requires models capable of learning higher-order feature interactions.
+The relationship between inputs and targets is governed by conditional interactions: the effect of a component's COA property on a blend property depends on that component's volume fraction. A high-octane component at 2% volume has negligible impact; at 40%, it dominates. These fraction-weighted interactions create a multiplicative feature space that linear models cannot capture without explicit feature engineering. Additionally, certain property pairs exhibit synergistic effects, the combined impact of two components exceeds the sum of their individual contributions, which requires models capable of learning higher-order feature interactions.
 
 ---
 
@@ -214,7 +214,7 @@ MAPE is scale-independent and interpretable as average percentage deviation, mak
 
 **Model Compression**: HistGradientBoosting models at approximately 471 KB per property (4.7 MB total for 10 models) are lightweight enough for edge deployment. Further compression via tree pruning or quantization is feasible if latency constraints tighten.
 
-**Blend Optimization Integration**: The trained models can serve as differentiable surrogate functions within a constrained optimization loop — given target property specifications, an optimizer can search the composition simplex for blends that satisfy all 10 property constraints simultaneously.
+**Blend Optimization Integration**: The trained models can serve as differentiable surrogate functions within a constrained optimization loop, given target property specifications, an optimizer can search the composition simplex for blends that satisfy all 10 property constraints simultaneously.
 
 ---
 
